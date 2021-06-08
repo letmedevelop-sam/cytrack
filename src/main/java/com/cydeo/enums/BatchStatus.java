@@ -1,12 +1,12 @@
 package com.cydeo.enums;
 
-public enum Status {
+public enum BatchStatus {
 
-    NEW("New"), RETAKING("Re-Taking"),RETURNING("Returing");
+    IN_PROGRESS("In Progress"), COMPLETED("Completed");
 
     private final String value;
 
-    private Status(String value){
+    private BatchStatus(String value){
 
         this.value=value;
     }
