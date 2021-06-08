@@ -2,7 +2,7 @@ package com.cydeo.enums;
 
 public enum TaskStatus {
 
-    IN_PROGRESS("In Progress"), LATE("Late"), COMPLETED("Completed");
+    ON_GOING("On Going"), LATE("Late"), COMPLETED("Completed");
 
     private final String value;
 
