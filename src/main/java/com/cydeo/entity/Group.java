@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "users")
+@Table(name = "groups")
 @Where(clause = "is_deleted=false")
 public class Group extends BaseEntity{
 

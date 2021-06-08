@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "users")
+@Table(name = "admins")
 @Where(clause = "is_deleted=false")
 public class Admin extends BaseEntity{
     //private User user;

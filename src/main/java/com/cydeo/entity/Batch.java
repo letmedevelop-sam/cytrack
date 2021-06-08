@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "users")
+@Table(name = "batches")
 @Where(clause = "is_deleted=false")
 public class Batch extends BaseEntity{
 

@@ -110,8 +110,16 @@ VALUES ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Group-1', 'E
 
 ON CONFLICT DO NOTHING;
 
-INSERT INTO tasks (id, task_name, task_assign_date, task_due_date, task_lesson, task_status)
-VALUES (1, 'RecordingDay1', '2021-06-05', '2021-06-06', 'Java', 'ON_GOING'),
-       (2, 'RecordingDay2', '2021-06-06', '2021-06-07', 'Selenium', 'ON_GOING')
+INSERT INTO tasks (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
+                   task_name, task_assign_date, task_due_date, task_lesson, task_status)
+VALUES (1, '2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1,'RecordingDay1', '2021-06-05', '2021-06-06', 'Java', 'ON_GOING'),
+       (2, '2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1,'RecordingDay2', '2021-06-06', '2021-06-07', 'Selenium', 'ON_GOING')
+
+ON CONFLICT DO NOTHING;
+
+INSERT INTO lessons (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
+                     lesson_name)
+VALUES (1, '2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1,'Java'),
+       (2, '2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1,'Selenium')
 
 ON CONFLICT DO NOTHING;

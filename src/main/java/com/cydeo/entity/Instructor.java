@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "users")
+@Table(name = "instrustors")
 @Where(clause = "is_deleted=false")
 public class Instructor extends BaseEntity{
 
