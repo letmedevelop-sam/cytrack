@@ -23,7 +23,7 @@ public class User extends BaseEntity{
     private String lastName;
     private String email;
     private String passWord;
-    private String phone
+    private String phone;
     private boolean enabled;
     private LocalDate birthday;
 
