@@ -5,23 +5,27 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.Where;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "users")
+@Table(name = "lessons")
 @Where(clause = "is_deleted=false")
 public class Lesson extends BaseEntity{
 
-    private String lessonName;
+    private String name;
 
+    @ManyToOne
+    private Batch batch;
 
-    //instructor
-
-
-    //task
+    @ManyToMany
+    @JoinTable(name = "lesson_instructor_rel",
+            joinColumns = {@JoinColumn(name = "lesson_id")},
+            inverseJoinColumns = {@JoinColumn(name = "instructor_id")})
+    private Set<User> instructorSet = new HashSet<>();
 
 }

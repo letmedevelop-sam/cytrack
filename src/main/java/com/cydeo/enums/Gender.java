@@ -2,7 +2,7 @@ package com.cydeo.enums;
 
 public enum Gender {
 
-    M("Male"),F("Female");
+    FEMALE("Female"), MALE("Male");
 
     private final String value;
 

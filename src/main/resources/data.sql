@@ -1,125 +1,81 @@
-INSERT INTO admins (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
-                    first_name, last_name, email, gender)
-VALUES ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Mike', 'Bravo', 'mike0@cydeo.com', 'M'),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 2, 'Omer', 'Uslu', 'omer0@cydeo.com', 'M')
+insert into batches (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
+                     batch_end_date, batch_start_date, batch_status, name, notes)
+values (now(), 1, false, now(), 1, '2021-12-30', '2021-06-30', 'PLANNED', 'EU-1', 'EU only'),
+       (now(), 1, false, now(), 1, '2022-12-30', '2021-06-30', 'PLANNED', 'EU-2', 'EU only'),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-06-30', 'PLANNED', 'EU-3', 'EU only'),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-06-30', 'PLANNED', 'EU-4', 'EU only'),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-06-30', 'PLANNED', 'EU-5', 'EU only');
 
-    ON CONFLICT DO NOTHING;
+insert into roles (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id, description)
+values (now(), 1, false, now(), 1, 'Admin'),
+       (now(), 1, false, now(), 1, 'Instructor'),
+       (now(), 1, false, now(), 1, 'CybertekMentor'),
+       (now(), 1, false, now(), 1, 'AlumniMentor'),
+       (now(), 1, false, now(), 1, 'Student');
 
-INSERT INTO intructors (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
-                        first_name, last_name, email, gender)
-VALUES ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Ozzy', 'Canli', 'ozzy0@cydeo.com', 'M'),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 2, 'Jamal', 'Demir', 'jamal0@cydeo.com', 'M'),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 3, 'Muhtar', 'Cool', 'muhtar0@cydeo.com', 'M'),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 4, 'Asiye', 'Mamat', 'asiye0@cydeo.com', 'F')
+insert into users (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id, birthday,
+                   country, email, enabled, first_name, gender, last_name, password, phone, status, group_id, role_id)
+values (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'mike@ct.com', true, 'Mike', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW', null, 1),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'omer@ct.com', true, 'Omer', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 1),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'ozzy@ct.com', true, 'Ozzy', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 2),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'jamal@ct.com', true, 'Jamal', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 2),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'baha@ct.com', true, 'Baha', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 3),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'cihat@ct.com', true, 'Cihat', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 3),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'osman@ct.com', true, 'Osman', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 4),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'pelin@ct.com', true, 'Pelin', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 4),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'messi@ct.com', true, 'Messi', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 5),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'ronaldo@ct.com', true, 'Ronaldo', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 5),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'iniesta@ct.com', true, 'Iniesta', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 5),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'falcao@ct.com', true, 'Falcao', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 5),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'sneider@ct.com', true, 'Sneider', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 5),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'ribery@ct.com', true, 'Ribery', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 5),
+       (now(), 1, false, now(), 1, '1980-12-30', 'USA', 'akbar@ct.com', true, 'Akbar', 'MALE', 'Smith', 'Abc123', '5412589874', 'NEW',null, 2);
 
-ON CONFLICT DO NOTHING;
+insert into lessons (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id, name, batch_id)
+values (now(), 1, false, now(), 1,'Java', 1),
+       (now(), 1, false, now(), 1,'Selenium', 1),
+       (now(), 1, false, now(), 1,'SDLC', 1),
+       (now(), 1, false, now(), 1,'API', 1),
+       (now(), 1, false, now(), 1,'Git/GitHub', 1);
 
-INSERT INTO cybertek_mentors (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
-                              first_name, last_name, email, password, phone, enabled, birthday, country, gender, mentor_working_status)
+insert into lesson_instructor_rel (lesson_id, instructor_id)
+values (1, 3),
+       (2, 4),
+       (3, 3),
+       (4, 3),
+       (4, 4),
+       (1, 15);
 
-VALUES  ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Baha', 'Tas', 'baha@cydeo.com', 'Abc123',
-    '5398463219', 'true', '1980-05-05 00:00:00', 'UK', 'M','FULL_TIME'),
-        ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Sam', 'Kar', 'sam@cydeo.com', 'Abc123',
-    '9745631987', 'true', '1960-06-01 00:00:00', 'SPAIN', 'M','FULL_TIME'),
-        ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Matt', 'Dmn', 'matt@cydeo.com', 'Abc123',
-    '5741365789', 'true', '1981-09-19 00:00:00', 'UK', 'M','FULL_TIME'),
-        ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Cht', 'Ypc', 'baggio@cydeo.com', 'Abc123',
-    '6319873521', 'true', '1974-11-05 00:00:00', 'GERMANY', 'M','PART_TIME'),
-        ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Snn', 'Shn', 'snn@cydeo.com', 'Abc123',
-    '5135746821', 'true', '1990-06-22 00:00:00', 'FRANCE', 'M','PART_TIME')
+insert into groups (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
+                    mascot, name, alumni_mentor_id, batch_id, cybertek_mentor_id)
+values (now(), 1, false, now(), 1, 'Eagles', 'Group-1', 7, 1, 5),
+       (now(), 1, false, now(), 1, 'Falcons', 'Group-2', 7, 1, 5),
+       (now(), 1, false, now(), 1, 'Tigers', 'Group-3', 8, 1, 6),
+       (now(), 1, false, now(), 1, 'Lions', 'Group-4', 8, 1, 6);
 
-ON CONFLICT DO NOTHING;
+insert into tasks (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
+                   assign_date, due_date, name, type, lesson_id)
+values (now(), 1, false, now(), 1, '2021-12-30', '2021-12-30', 'JavaEU1Day01Recording', 'Recording', 1),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-12-30', 'Assignment01','Assignment', 1),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-12-30', 'Quiz02','Quiz', 1),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-12-30', 'Day02','Recording', 2),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-12-30', 'Assessment-01','Quiz', 2),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-12-30', 'Day03','Recording', 3),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-12-30', 'Day04','Recording', 1),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-12-30', 'Week01','Flipgrid', 1),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-12-30', 'Day03','Recording', 2),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-12-30', 'Week02','Meeting', 3),
+       (now(), 1, false, now(), 1, '2021-12-30', '2021-12-30', 'Day06','Recording', 3);
 
-INSERT INTO alumni_mentors (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
-                              first_name, last_name, email, password, phone, enabled, birthday, country, gender, mentor_working_status)
+insert into task_student_rel (task_id, student_id)
+values (1, 9),
+       (2, 9),
+       (3, 9),
+       (4, 9),
+       (1, 10),
+       (2, 10),
+       (3, 10),
+       (4, 10),
+       (5, 11);
 
-VALUES  ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Cagri', 'Tem', 'cagri@cydeo.com', 'Abc123',
-         '5398463219', 'true', '1980-05-05 00:00:00', 'UK', 'M','FULL_TIME'),
-        ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Muhit', 'Tanb', 'muhit@cydeo.com', 'Abc123',
-         '9745631987', 'true', '1960-06-01 00:00:00', 'SPAIN', 'M','FULL_TIME'),
-        ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Pln', 'Ylmz', 'pln@cydeo.com', 'Abc123',
-         '5741365789', 'true', '1981-09-19 00:00:00', 'UK', 'M','FULL_TIME'),
-        ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Emrh', 'Blt', 'emrh@cydeo.com', 'Abc123',
-         '6319873521', 'true', '1974-11-05 00:00:00', 'GERMANY', 'M','PART_TIME'),
-        ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Kdr', 'Cmn', 'kdr@cydeo.com', 'Abc123',
-         '5135746821', 'true', '1990-06-22 00:00:00', 'FRANCE', 'M','PART_TIME')
-
-ON CONFLICT DO NOTHING;
-
-
-INSERT INTO studentds (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
-                       first_name, last_name, email, password, phone, enabled, birthday, country, gender,
-                       student_working_status, student_status, group_id)
-VALUES ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Christiano', 'Ronaldo', 'cronaldo@ju.com', 'Abc123',
-        '5398756325', 'true', '1990-06-22 00:00:00', 'ITALY', 'M', 'NOT_WORKING', 'NEW',
-        (select g.id from groups g where group_name='Group-1')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Lionel', 'Messi', 'lmessi@ba.com', 'Abc123',
-        '5135745698', 'true', '1991-07-24 00:00:00', 'SPAIN', 'M', 'NOT_WORKING', 'NEW',
-        (select g.id from groups g where group_name='Group-1')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Andres', 'Iniesta', 'ainiesta@ba.com', 'Abc123',
-        '6321478951', 'true', '1999-08-24 00:00:00', 'SPAIN', 'M', 'FULL_TIME', 'RETAKING',
-        (select g.id from groups g where group_name='Group-1')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Franck', 'Ribery', 'fribery@bm.com', 'Abc123',
-        '5987569841', 'true', '1989-07-29 00:00:00', 'GERMANY', 'M', 'NOT_WORKING', 'NEW',
-        (select g.id from groups g where group_name='Group-1')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Luka', 'Modric', 'lmodric@rm.com', 'Abc123',
-        '2156987412', 'true', '1994-07-12 00:00:00', 'SPAIN', 'M', 'NOT_WORKING', 'NEW',
-        (select g.id from groups g where group_name='Group-1')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Robert', 'Lewandowski', 'rlewandowski@bm.com', 'Abc123',
-        '3552698774', 'true',  '2001-07-24 00:00:00', 'GERMANY', 'M', 'PART_TIME', 'RETURNING',
-        (select g.id from groups g where group_name='Group-2')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Neymar', 'Neymar', 'nneymar@psg.com', 'Abc123',
-        '9877456669', 'true', '2011-11-11 00:00:00', 'FRANCE', 'M', 'NOT_WORKING', 'NEW',
-        (select g.id from groups g where group_name='Group-2')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Kevin', 'De Bruyne', 'kdbruyne@mc.com', 'Abc123',
-        '2155698455', 'true', '1996-12-21 00:00:00', 'UK', 'M', 'FULL_TIME', 'RETURNING',
-        (select g.id from groups g where group_name='Group-2')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Kylian', 'Mbappe', 'kmbappe@psg.com', 'Abc123',
-        '6985215547', 'true', '1993-07-07 00:00:00', 'FRANCE', 'M', 'FULL_TIME', 'RETAKING',
-        (select g.id from groups g where group_name='Group-2'))
-
-    ON CONFLICT DO NOTHING;
-
-
-INSERT INTO batches (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
-                     batch_name, batch_start_date, batch_end_date, batch_notes, batch_status)
-VALUES ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'EU-2', '2019-01-01', '2019-12-12','Note-1','COMPLETED'),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'EU-3', '2020-01-01', '2020-12-12','Note-2','COMPLETED'),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'EU-4', '2021-01-01', '2021-12-12','Note-3','ACTIVE')
-
-ON CONFLICT DO NOTHING;
-
-
-INSERT INTO groups (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
-                    group_name, group_mascot, mentor_id, batch_id)
-VALUES ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Group-1', 'Eagles',
-        (select m.id from mentors m where m.first_name='Baha'),
-        (select b.id from batches b where b.batch_name='EU-4')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Group-2', 'Falcons',
-        (select m.id from mentors m where m.first_name='Sam'),
-        (select b.id from batches b where b.batch_name='EU-4')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Group-3', 'Hawks',
-        (select m.id from mentors m where m.first_name='Cht'),
-        (select b.id from batches b where b.batch_name='EU-4')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Group-4', 'Panthers',
-        (select m.id from mentors m where m.first_name='Snn'),
-        (select b.id from batches b where b.batch_name='EU-4')),
-       ('2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1, 'Group-5', 'Lions',
-        (select m.id from mentors m where m.first_name='Matt'),
-        (select b.id from batches b where b.batch_name='EU-4'))
-
-ON CONFLICT DO NOTHING;
-
-INSERT INTO tasks (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
-                   task_name, task_assign_date, task_due_date, task_lesson, task_status)
-VALUES (1, '2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1,'RecordingDay1', '2021-06-05', '2021-06-06', 'Java', 'ON_GOING'),
-       (2, '2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1,'RecordingDay2', '2021-06-06', '2021-06-07', 'Selenium', 'ON_GOING')
-
-ON CONFLICT DO NOTHING;
-
-INSERT INTO lessons (insert_date_time, insert_user_id, is_deleted, last_update_date_time, last_update_user_id,
-                     lesson_name)
-VALUES (1, '2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1,'Java'),
-       (2, '2021-01-05 00:00:00', 1, false, '2021-01-05 00:00:00', 1,'Selenium')
-
-ON CONFLICT DO NOTHING;
+update users set group_id = 1 where users.id between 9 and 14;

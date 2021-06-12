@@ -2,7 +2,7 @@ package com.cydeo.enums;
 
 public enum BatchStatus {
 
-    ACTIVE("In Progress"), COMPLETED("Completed");
+    PLANNED("Planned"), INPROGRESS("In Progress"), COMPLETED("Completed");
 
     private final String value;
 

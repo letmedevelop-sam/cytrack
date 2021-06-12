@@ -1,32 +1,39 @@
 package com.cydeo.entity;
 
-import com.cydeo.enums.StudentStatus;
-import com.cydeo.enums.TaskStatus;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.Where;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "users")
+@Table(name = "tasks")
 @Where(clause = "is_deleted=false")
 public class Task extends BaseEntity{
 
-    private String taskName;
-    private LocalDate taskAssignDate;
-    private LocalDate taskDueDate;
-    private String taskLessonType;
+    private String name;
+    private String type;
 
-    @Enumerated(EnumType.STRING)
-    private TaskStatus taskStatus;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate assignDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dueDate;
+
+    @ManyToOne
+    private Lesson lesson;
+
+    @ManyToMany
+    @JoinTable(name = "task_student_rel",
+            joinColumns = {@JoinColumn(name = "task_id")},
+            inverseJoinColumns = {@JoinColumn(name = "student_id")})
+    private Set<Task> studentSet = new HashSet<>();
 
 }

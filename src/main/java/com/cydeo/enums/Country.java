@@ -2,7 +2,8 @@ package com.cydeo.enums;
 
 public enum Country {
 
-    US("United States"), DEU("Germany"), UK("United Kingdom"),  TUR("Turkey"),  HUN("Hungary");
+
+    USA("USA"), UK("UK"), GERMANY("Germany"), SPAIN("Spain"), TURKEY("Turkey");
 
     private final String value;
 

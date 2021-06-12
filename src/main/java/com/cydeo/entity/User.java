@@ -2,6 +2,7 @@ package com.cydeo.entity;
 
 import com.cydeo.enums.Country;
 import com.cydeo.enums.Gender;
+import com.cydeo.enums.Status;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,32 +21,33 @@ import java.util.Set;
 @Where(clause = "is_deleted=false")
 public class User extends BaseEntity{
 
+
     private String firstName;
     private String lastName;
     private String email;
-    private String passWord;
+    private String password;
     private String phone;
     private boolean enabled;
     private LocalDate birthday;
 
     @Enumerated(EnumType.STRING)
-    private Gender gender;
-
-    @Enumerated(EnumType.STRING)
     private Country country;
 
     @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
+    @ManyToOne
     private Role role;
 
-
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private com.cydeo.entity.Role role;
-
-    @ManyToOne
-    private  Group group;
-
-    @ManyToMany(mappedBy = "studentSet")
+    @ManyToMany(mappedBy = "instructorSet")
     private Set<Lesson> lessonSet = new HashSet<>();
 
+    @ManyToOne
+    private Group group;
+
+    @ManyToMany(mappedBy = "studentSet")
+    private Set<Task> taskSet = new HashSet<>();
 }
