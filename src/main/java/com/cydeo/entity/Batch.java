@@ -5,11 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.Where;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @NoArgsConstructor
@@ -20,18 +18,17 @@ import java.time.LocalDate;
 @Where(clause = "is_deleted=false")
 public class Batch extends BaseEntity{
 
-    private String batchName;
+    private String name;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate batchStartDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate batchEndDate;
-    private String batchNotes;
+
+    @Column(columnDefinition = "text")
+    private String notes;
 
     @Enumerated(EnumType.STRING)
     private BatchStatus batchStatus;
 
-    //Instructor
-
-    //Mentor
-
-    //Student
 
 }

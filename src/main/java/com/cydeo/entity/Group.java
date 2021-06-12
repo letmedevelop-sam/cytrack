@@ -6,6 +6,8 @@ import lombok.Setter;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @NoArgsConstructor
@@ -16,12 +18,18 @@ import javax.persistence.Table;
 @Where(clause = "is_deleted=false")
 public class Group extends BaseEntity{
 
-    private String groupName;
-    private String groupMascot;
+    private String name;
+    private String mascot;
 
-    //batch
+    @ManyToOne
+    @JoinColumn(name="batch_id")
+    private Batch batch;
 
-    //mentor
+    @ManyToOne
+    @JoinColumn(name = "cybertekMentor_id")
+    private User cybertekMentor;
 
-    //student
+    @ManyToOne
+    @JoinColumn(name = "alumniMentor_id")
+    private User alumniMentor;
 }

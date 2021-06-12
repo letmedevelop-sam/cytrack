@@ -2,7 +2,6 @@ package com.cydeo.entity;
 
 import com.cydeo.enums.Country;
 import com.cydeo.enums.Gender;
-import com.cydeo.enums.Role;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +9,8 @@ import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @Getter
@@ -37,5 +38,14 @@ public class User extends BaseEntity{
     private Role role;
 
 
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private com.cydeo.entity.Role role;
+
+    @ManyToOne
+    private  Group group;
+
+    @ManyToMany(mappedBy = "studentSet")
+    private Set<Lesson> lessonSet = new HashSet<>();
 
 }
