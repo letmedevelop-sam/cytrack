@@ -30,5 +30,4 @@ public class Batch extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private BatchStatus batchStatus;
 
-
 }

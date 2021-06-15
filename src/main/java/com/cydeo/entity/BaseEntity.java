@@ -8,6 +8,10 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @MappedSuperclass   //No inheritance with entity
 public class BaseEntity {
 
