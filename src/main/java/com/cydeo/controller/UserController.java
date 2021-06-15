@@ -19,4 +19,11 @@ public class UserController {
     public String adminList(){
         return "user/admin-list";
     }
+
+    @GetMapping("/instructorList")
+    public String instructorList(){
+        return "user/instructor-list";
+    }
+
+
 }
