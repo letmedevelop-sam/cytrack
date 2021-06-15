@@ -21,12 +21,12 @@
                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
                   </div>
                   <div class="col-auto">
-                    <button id="createButton" type="button" class="btn">Create New Admin</button><br>
+                    <button id="createButton" type="button" class="btn">Create New Cybertek Mentor</button><br>
                   </div>
                 </div><br>
                 <section class="panel">
                   <header class="panel-heading">
-                    <h2 class="panel-title">Admin List</h2>
+                    <h2 class="panel-title">Cybertek Mentors List</h2>
                   </header>
                   <div class="panel-body">
                     <div class="table-responsive">
@@ -43,14 +43,14 @@
                         </tr>
                         </thead>
                         <tbody id="myTable">
-                        <tr th:each="admin: ${admins}">
-                          <td th:text="${admin.firstName + ' ' + admin.lastName}"></td>
-                          <td th:text="${admin.country.value}"></td>
-                          <td th:text="${admin.gender.value}"></td>
-                          <td th:text="${admin.email}"></td>
-                          <td th:text="${admin.phone}"></td>
-                          <td th:text="${admin.birthday}"></td>
-                          <td class="actions">
+                        <tr th:each="cybmentor: ${cybmentors}">
+                          <td th:text="${cybmentor.firstName + ' ' + cybmentor.lastName}"></td>
+                          <td th:text="${cybmentor.country.value}"></td>
+                          <td th:text="${cybmentor.gender.value}"></td>
+                          <td th:text="${cybmentor.email}"></td>
+                          <td th:text="${cybmentor.phone}"></td>
+                          <td th:text="${cybmentor.birthday}"></td>
+<!--                          <td class="actions">-->
 <!--                            <a th:href="@{/admin/show-admin/{id}(id=${admin.email})}" class="btn btn-facebook rounded-0">Show</a>-->
 <!--                            <a th:href="@{/admin/update-admin/{id}(id=${admin.email})}"><button type="button" class="btn btn-warning btn-sm">Update</button></a>-->
 <!--                            <a th:href="@{/student/delete-admin/{id}(id=${admin.email})}" class="delete-row"><button type="button" class="btn btn-secondary btn-sm">Delete</button></a>-->
