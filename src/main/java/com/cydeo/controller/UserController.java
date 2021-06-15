@@ -40,6 +40,11 @@ public class UserController {
         return "user/almn-mentor-list";
     }
 
+    @GetMapping("/studentList")
+    public String studentList (Model model){
+        model.addAttribute("students", userService.listAllUserByRole("Student"));
+        return "user/student-list";
+    }
 /*
  @PostMapping("/create")
     public String insertUser(UserDTO user,Model model){  //this will activate SAVE button //We used UserDTO because after SAVE we want to see default placeholders//We need Model because we want to create new object
