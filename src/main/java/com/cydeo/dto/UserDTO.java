@@ -17,6 +17,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -37,6 +38,7 @@ public class UserDTO {
     private Country country;
     private Gender gender;
     private Status status;
-    private Role role;
+    private RoleDTO roleDTO;
+    private List<LessonDTO> lesson;
 
 }

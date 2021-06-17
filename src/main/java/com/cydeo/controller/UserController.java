@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 
     UserService userService;
+   // LessonService
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -24,9 +25,17 @@ public class UserController {
 
     @GetMapping("/instructorList")
     public String instructorList(Model model){
-        model.addAttribute("instructors", userService.listAllUserByRole("Instructor"));
+        model.addAttribute("instructors", userService.getInstructorsAndLessonsMap());
         return "user/instructor-list";
     }
+
+
+
+
+
+
+
+
 
     @GetMapping("/cybmentorList")
     public String cybmentorList(Model model){

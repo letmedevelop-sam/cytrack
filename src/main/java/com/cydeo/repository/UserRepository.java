@@ -9,6 +9,8 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository <User, Long> {
 
-    List<User> findAllByRoleDescription(String role);
+    List<User> findAllByRoleDescriptionIgnoreCase(String role);
+
+    User findByEmail(String email);
 
 }
