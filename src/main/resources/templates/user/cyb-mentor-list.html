@@ -39,17 +39,19 @@
                           <th scope="col">Email</th>
                           <th scope="col">Phone</th>
                           <th scope="col">Birthday</th>
+                          <th scope="col">Groups</th>
 <!--                          <th scope="col">Action</th>-->
                         </tr>
                         </thead>
                         <tbody id="myTable">
-                        <tr th:each="cybmentor: ${cybmentors}">
+                        <tr th:each="cybmentor: ${cybmentors.keySet()}">
                           <td th:text="${cybmentor.firstName + ' ' + cybmentor.lastName}"></td>
                           <td th:text="${cybmentor.country.value}"></td>
                           <td th:text="${cybmentor.gender.value}"></td>
                           <td th:text="${cybmentor.email}"></td>
                           <td th:text="${cybmentor.phone}"></td>
                           <td th:text="${cybmentor.birthday}"></td>
+                          <td th:text="${cybmentors.get(cybmentor)}"></td>
 <!--                          <td class="actions">-->
 <!--                            <a th:href="@{/admin/show-admin/{id}(id=${admin.email})}" class="btn btn-facebook rounded-0">Show</a>-->
 <!--                            <a th:href="@{/admin/update-admin/{id}(id=${admin.email})}"><button type="button" class="btn btn-warning btn-sm">Update</button></a>-->

@@ -30,18 +30,14 @@ public class UserController {
     }
 
 
-
-
-
-
-
-
-
     @GetMapping("/cybmentorList")
     public String cybmentorList(Model model){
-        model.addAttribute("cybmentors", userService.listAllUserByRole("CybertekMentor"));
+        model.addAttribute("cybmentors", userService.getCybertekMentorsAndGroupsMap());
         return "user/cyb-mentor-list";
     }
+
+
+
 
     @GetMapping("/almnmentorList")
     public String almnmentorList (Model model){
