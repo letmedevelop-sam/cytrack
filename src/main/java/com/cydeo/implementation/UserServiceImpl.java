@@ -70,4 +70,17 @@ public class UserServiceImpl implements UserService {
 
         return cybertekMentorGroupsMap;
     }
+
+    @Override
+    public Map<UserDTO, String> getAlumniMentorsAndGroupsMap() {
+        Map<UserDTO,String> alumniMentorsGroupsMap = new HashMap<>();
+        List<UserDTO> alumniMentors = listAllUserByRole("AlumniMentor");
+        for (UserDTO mentor : alumniMentors) {
+            List<GroupDTO> groupDTO = groupService.listAllGroupsOfAlumniMentor(mentor.getEmail());
+            String groups = groupDTO.stream().map(obj -> (obj.getBatch().getName() + " " + obj.getName())).reduce("",(x,y)-> x + y + " / ");
+            groups = groups.substring(0,groups.length()-2);
+            alumniMentorsGroupsMap.put(mentor,groups);
+        }
+        return alumniMentorsGroupsMap;
+    }
 }

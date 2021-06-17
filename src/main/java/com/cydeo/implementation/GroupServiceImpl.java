@@ -35,10 +35,10 @@ public class GroupServiceImpl implements GroupService {
         return groups.stream().map(obj -> mapperUtil.convert(obj, new GroupDTO())).collect(Collectors.toList());
     }
 
-//    @Override
-//    public List<GroupDTO> listAllGroupsOfAlumniMentor(String username) {
-//        List<Group> groups = groupRepository.findAllByAlumniMentorEmail(username);
-//        return groups.stream().map(obj -> mapperUtil.convert(obj, new GroupDTO())).collect(Collectors.toList());
-//    }
+    @Override
+    public List<GroupDTO> listAllGroupsOfAlumniMentor(String username) {
+        List<Group> groups = groupRepository.findAllByAlumniMentorEmail(username);
+        return groups.stream().map(obj -> mapperUtil.convert(obj, new GroupDTO())).collect(Collectors.toList());
+    }
 
 }

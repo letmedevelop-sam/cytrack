@@ -39,17 +39,19 @@
                           <th scope="col">Email</th>
                           <th scope="col">Phone</th>
                           <th scope="col">Birthday</th>
+                          <th scope="col">Groups</th>
 <!--                          <th scope="col">Action</th>-->
                         </tr>
                         </thead>
                         <tbody id="myTable">
-                        <tr th:each="almnmentor: ${almnmentors}">
+                        <tr th:each="almnmentor: ${almnmentors.keySet()}">
                           <td th:text="${almnmentor.firstName + ' ' + almnmentor.lastName}"></td>
                           <td th:text="${almnmentor.country.value}"></td>
                           <td th:text="${almnmentor.gender.value}"></td>
                           <td th:text="${almnmentor.email}"></td>
                           <td th:text="${almnmentor.phone}"></td>
                           <td th:text="${almnmentor.birthday}"></td>
+                          <td th:text="${almnmentors.get(almnmentor)}"></td>
 <!--                          <td class="actions">-->
 <!--                            <a th:href="@{/admin/show-admin/{id}(id=${admin.email})}" class="btn btn-facebook rounded-0">Show</a>-->
 <!--                            <a th:href="@{/admin/update-admin/{id}(id=${admin.email})}"><button type="button" class="btn btn-warning btn-sm">Update</button></a>-->

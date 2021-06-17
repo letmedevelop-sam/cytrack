@@ -8,6 +8,6 @@ public interface GroupService {
 
     List<GroupDTO> listAllGroups();
     List<GroupDTO> listAllGroupsOfCybertekMentor(String username);
- //   List<GroupDTO> listAllGroupsOfAlumniMentor(String username);
+    List<GroupDTO> listAllGroupsOfAlumniMentor(String username);
 
 }

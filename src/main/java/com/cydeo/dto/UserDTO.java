@@ -38,7 +38,10 @@ public class UserDTO {
     private Country country;
     private Gender gender;
     private Status status;
-    private RoleDTO roleDTO;
-    private List<LessonDTO> lesson;
+    private RoleDTO role;
+    private GroupDTO group;
+
+//   private List<LessonDTO> lesson
+//    private List<TaskDTO> tasks;
 
 }

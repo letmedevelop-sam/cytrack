@@ -12,4 +12,6 @@ public interface UserService {
     Map<UserDTO, String> getInstructorsAndLessonsMap(); //this map will bring assigned lessons for each instructor
 
     Map<UserDTO, String> getCybertekMentorsAndGroupsMap(); // this map will bring assigned groups for each Cybertek Mentor
+
+    Map<UserDTO, String> getAlumniMentorsAndGroupsMap(); // this map will bring assigned groups for each Alumni Mentor
 }
