@@ -42,9 +42,6 @@ public class UserController {
         return "user/almn-mentor-list";
     }
 
-
-
-
     @GetMapping("/studentList")
     public String studentList (Model model){
         model.addAttribute("students", userService.listAllUserByRole("Student"));
